@@ -183,7 +183,7 @@ post:
               request.AddParameter("application/json", body,  ParameterType.RequestBody);
               IRestResponse response = client.Execute(request);
               Console.WriteLine(response.Content);
+                         }
           }
-              }
-              }
+        }
                                                                                                                                                                                 
