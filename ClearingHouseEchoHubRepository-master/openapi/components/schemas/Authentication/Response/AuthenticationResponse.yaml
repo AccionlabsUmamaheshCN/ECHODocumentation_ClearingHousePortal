@@ -4,7 +4,7 @@ properties:
     type: object
     properties:
       ResponseCode:
-        type: integer
+        type: string
         description: Response Code 001
       ResponseCodeDesc:
         type: string
@@ -20,45 +20,46 @@ properties:
     type: object
     properties:
       ResponseCode:
-        type: integer
+        type: string
         description: Response Code 901
       ResponseCodeDesc:
         type: string
-        description: Invalid Customer ID
+        description: Invalid Consumer Id
      
       TransError for Payment Response Code 901:
         type: object
         properties:
           ErrorCode:
             type: string
-            description: Response code for 901
+            description: "901"
           ErrorCodeDesc:
             type: string
-            description: Invalid Consumer ID
-          creationDate:
+            description: Invalid Consumer Id
+          creationdate:
             type: string
             description: Current Date & Time
-  This is the Response for Response Code 905:
+  This is the Response for Response Code 902:
     type: object
     properties:
       ResponseCode:
-        type: integer
-        description: Response Code 905
+        type: string
+        description: Response Code 902
       ResponseCodeDesc:
         type: string
         description: Invalid Endpoint
       
-      TransError for Payment Response Code 905:
+      TransError for Payment Response Code 902:
         type: object
         properties:
           ErrorCode:
             type: string
-            description: Response code for 905
+            description: "902"
           ErrorCodeDesc:
             type: string
             description: Invalid Endpoint
-          creationDate:
+          creationdate:
             type: string
             description: Current Date & Time          
+           
                 
                      
