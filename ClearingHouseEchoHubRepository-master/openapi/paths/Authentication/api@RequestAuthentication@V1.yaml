@@ -26,34 +26,54 @@ get:
           schema:
             $ref: ../../components/schemas/Authentication/Response/AuthenticationResponse.yaml
           examples:
-            mapName:   
+            mapName_001:   
               description: Please scroll the above dropdown list for more response codes          
               summary: "001"
               value:
                 ReponseCode: Response for Payment response code 001
-                ReponseCodeDesc: Successful Transaction                
+                ReponseCodeDesc: Transaction Approved                
                 TransLog:  
-                   AuthToken: Authorization token
+                   - AuthToken: Authorization token
 
 
-            mapName1:   
+            mapName_901:   
               description: Please scroll the above dropdown list for more response codes          
               summary: "901"
               value:
-                ReponseCode: Response for Payment response code 901
-                ReponseCodeDesc:  Transaction  Failure
+                ReponseCode: Response for Error  Code 901
+                ReponseCodeDesc:  Invalid Consumer Id.
                 TransError:  
-                    ErrorCode: Response for Payment response code 901
-                    ErrorCodeDesc: Invalid Customer ID
-                    creationDate: Current Date & Time
-            mapName2:   
+                   - ErrorCode: "901"
+                     ErrorCodeDesc: Invalid Customer Id
+                     creationdate: Current Date & Time
+            mapName_902:   
                 description: Please scroll the above dropdown list for more response codes          
-                summary: "905"
+                summary: "902"
                 value:
-                  ReponseCode: Response for Payment response code 905
+                  ReponseCode: Response for Error Code 902
                   ReponseCodeDesc: Transaction  Failure              
                   TransError:  
-                      ErrorCode: Response for Payment response code 905
-                      ErrorCodeDesc: Invalid Endpoint
-                      creationDate: Current Date & Time        
-                    
+                     - ErrorCode: "902"
+                       ErrorCodeDesc: Invalid Endpoint
+                       creationdate: Current Date & Time
+  x-code-samples: 
+    - lang: 'C#'                
+      source: |
+      
+        using System;   
+        using RestSharp;
+
+        public class Program
+        {
+          public static  void Main()
+          {
+              var client = new RestClient("https://qa-api.echohealthinc.com/echoexternalapi/api/v1/GetToken");
+                  client.Timeout = -1;
+              var request = new RestRequest(Method.GET);
+                  request.AddHeader("x-ApiKey", "string");
+                  request.AddHeader("x-clientkey", "string");
+                  IRestResponse response =  client.Execute(request);
+                  Console.WriteLine(response.Content);
+          }
+        }                    
+

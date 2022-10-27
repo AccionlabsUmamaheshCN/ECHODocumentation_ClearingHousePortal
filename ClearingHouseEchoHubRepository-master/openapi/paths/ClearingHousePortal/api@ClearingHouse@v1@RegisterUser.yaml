@@ -32,14 +32,7 @@ post:
         application/json:
           schema:
             $ref: ../../components/schemas/ClearingHousePortal/Response/CHPRegisterProcessResponse.yaml
-  x-codeSamples:
-    - lang: 'C#'
-      source: 
-         using System;
-         using System.Net.Http;
-         using System.Text;
-         using Newtonsoft.Json.Linq;
-         public class Program
+  
           examples:
             mapName_001:   
               description: Please scroll the above dropdown list for more response codes          
@@ -150,4 +143,31 @@ post:
                 TransError:
                   ErrorCode: "1072"
                   ErrorDesc: Invalid or Missing Other ClearinghouseName
+  x-code-samples: 
+    - lang: 'C#'                
+      source: |
+        using System;
+        using System.Net.Http;
+        using System.Text;
+        using Newtonsoft.Json.Linq;
+        public class Program
+        {
+        private readonly IHttpClientFactory _httpClientFactory;
+        public static async Task Main(string[] args)
+        {
+          var client = _httpClientFactory.CreateClient();
+        client.DefaultRequestHeaders.Add("x-RequestUrl", "string");
+        client.DefaultRequestHeaders.Add("x-RequestFromAPP", "string");
+        client.DefaultRequestHeaders.Add("x-Authorization", "string");
+        client.DefaultRequestHeaders.Add("x-AccessId", "string");
+        JObject json = JObject.Parse(@"{
+                RequestValueType: 'string',
+                RequestValue: 'string',
+                LibraryMethod: 'string'
+                }");
+        var postData = new StringContent(json.ToString(), Encoding.UTF8, "application/json");
+        var request = await 
+        client.PostAsync("https://sandbox.echohealthincapi.com/api/DirectPay/v1/PaymentCancel", postData);      
+        var response = await request.Content.ReadAsStringAsync();
+        Console.WriteLine(response);
                                                                                                                                                                                 
