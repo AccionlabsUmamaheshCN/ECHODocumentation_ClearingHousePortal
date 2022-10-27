@@ -8,6 +8,7 @@ post:
   parameters:
     - name: x-Authorization
       in: header
+      required: true
       schema:
         type: string
         $ref: ../../components/headers/xAuthorization.yaml
