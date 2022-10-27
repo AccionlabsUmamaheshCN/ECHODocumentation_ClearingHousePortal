@@ -32,6 +32,14 @@ post:
         application/json:
           schema:
             $ref: ../../components/schemas/ClearingHousePortal/Response/CHPRegisterProcessResponse.yaml
+  x-codeSamples:
+    - lang: 'C#'
+      source: 
+         using System;
+         using System.Net.Http;
+         using System.Text;
+         using Newtonsoft.Json.Linq;
+         public class Program
           examples:
             mapName_001:   
               description: Please scroll the above dropdown list for more response codes          
