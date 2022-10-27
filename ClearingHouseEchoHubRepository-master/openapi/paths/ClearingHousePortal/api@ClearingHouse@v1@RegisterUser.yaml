@@ -149,8 +149,7 @@ post:
         using System;   
         using RestSharp;
         public class Program
-        {
-        
+        {        
           public static  void Main()
           {
             var client = new RestClient("https://qa-paymenthub.echohealthinc.com/api/ClearinghousePortal/v1/Portal");
