@@ -169,7 +169,7 @@ post:
               " + "\n" +
               @"    ""Email"": ""string"",
               " + "\n" +
-              @"    ""Phone"": ""integer"",
+              @"    ""Phone"": ""string"",
               " + "\n" +
               @"    ""JobTitle"": ""string"",
               " + "\n" +
