@@ -44,49 +44,13 @@ post:
                 ReponseCodeDesc: Transaction Failed
                 ResponseTransactionID: Transaction Number
                 TransError:  
-                    ErrorCode: Error code number
-                    ErrorDesc: Error description
-
-            mapName_2016:
-              description: Please scroll the above dropdown list for more response codes
-              summary: "2016"
-              value:
-                ReponseCode: Response Code 900
-                ReponseCodeDesc: Transaction Failed
-                ResponseTransactionID: Transaction Number
-                TransError:
-                  ErrorCode: "2016"
-                  ErrorDesc: Invalid or Missing Key
-
-            mapName_1035:
-              description: Please scroll the above dropdown list for more response codes
-              summary: "1035"
-              value:
-                ReponseCode: Response Code 900
-                ReponseCodeDesc: Transaction Failed
-                ResponseTransactionID: Transaction Number
-                TransError:
-                  ErrorCode: "1035"
-                  ErrorDesc: Invalid or Missing UserName
-
-            mapName_177:
-              description: Please scroll the above dropdown list for more response codes
-              summary: "177"
-              value:
-                ReponseCode: Response Code 900
-                ReponseCodeDesc: Transaction Failed
-                ResponseTransactionID: Transaction Number
-                TransError:
-                  ErrorCode: "177"
-                  ErrorDesc: Invalid or Missing PhoneNumber
-
-            mapName_2025:
-              description: Please scroll the above dropdown list for more response codes
-              summary: "2025"
-              value:
-                ReponseCode: Response Code 900
-                ReponseCodeDesc: Transaction Failed
-                ResponseTransactionID: Transaction Number
-                TransError:
-                  ErrorCode: "2025"
-                  ErrorDesc: Invalid or Missing Job Title
+                  -  ErrorCode: Error code number
+                     ErrorDesc: Error description          
+                  -  ErrorCode: "2016"
+                     ErrorDesc: Invalid or Missing Key            
+                  -  ErrorCode: "1035"
+                     ErrorDesc: Invalid or Missing UserName            
+                  -  ErrorCode: "177"
+                     ErrorDesc: Invalid or Missing PhoneNumber            
+                  -  ErrorCode: "2025"
+                     ErrorDesc: Invalid or Missing Job Title

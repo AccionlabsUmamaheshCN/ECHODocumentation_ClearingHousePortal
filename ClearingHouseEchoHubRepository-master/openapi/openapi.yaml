@@ -22,7 +22,8 @@ info:
 servers:
       - url: https://sandbox.echohealthinc.com/echoexternalapi
       - url: https://api.echohealthinc.com/echoexternalapi
-      
+security: 
+  -  {}      
 
     
 
