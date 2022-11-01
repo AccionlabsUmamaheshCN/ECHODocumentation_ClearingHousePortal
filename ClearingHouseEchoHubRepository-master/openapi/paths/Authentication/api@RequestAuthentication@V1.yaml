@@ -75,5 +75,45 @@ get:
                   IRestResponse response =  client.Execute(request);
                   Console.WriteLine(response.Content);
           }
-        }                    
+        }  
 
+    - lang: curl
+      source: |
+        curl -i -X GET \
+        https://sandbox.echohealthinc.com/echoexternalapi/api/v1/GetToken \
+        -H 'x-ApiKey: YOUR_API_KEY_HERE' \
+        -d '{
+        "x-ApiKey": "string",
+        "x-ClientKey": "string"
+          }'
+    - lang: java
+      source: |
+        import java.net.*;
+        import java.net.http.*;
+        import java.util.*;
+        
+        public class App {
+          public static void main(String[] args) throws Exception {
+            var httpClient = HttpClient.newBuilder().build();
+        
+            var payload = String.join("\n"
+              , "{"
+              , " \"x-ApiKey\": \"string\","
+              , " \"x-ClientKey\": \"string\""
+              , "}"
+            );
+        
+            var host = "https://sandbox.echohealthinc.com";
+            var pathname = "/echoexternalapi/api/v1/GetToken";
+            var request = HttpRequest.newBuilder()
+              .GET(HttpRequest.BodyPublishers.ofString(payload))
+              .uri(URI.create(host + pathname ))
+              .header("Content-Type", "application/json")
+              .header("x-ApiKey", "YOUR_API_KEY_HERE")
+              .build();
+        
+            var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+        
+            System.out.println(response.body());
+          }
+        }      
