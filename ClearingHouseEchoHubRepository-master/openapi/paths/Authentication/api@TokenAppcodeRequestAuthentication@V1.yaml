@@ -86,8 +86,9 @@ get:
         https://sandbox.echohealthinc.com/echoexternalapi/api/v1/GetToken \
         -H 'x-ApiKey: YOUR_API_KEY_HERE' \
         -d '{
-        "x-ApiKey": "string",
-        "x-ClientKey": "string"
+        "x-Appcode": "string",
+        "Origin": "string",
+        "Referer":"string"
           }'
     - lang: java
       source: |
@@ -107,8 +108,9 @@ get:
               
               .uri(URI.create(host + pathname ))
               .header("Content-Type", "application/json")
-              .header("x-ApiKey", "string")
-              .header("x-ClientKey", "string")
+              .header("x-AppCode", "string")
+              .header("Origin", "string")
+              .header("Referer", "string")
               .build();
         
             var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -116,7 +118,7 @@ get:
             System.out.println(response.body());
           }
         }
-    - lang: Node.js
+    - lang: Java
       source: | 
         import fetch from 'node-fetch';
 
@@ -127,8 +129,9 @@ get:
               method: 'GET',
               headers: {
                 'Content-Type': 'application/json',
-                'x-ApiKey': 'string',
-                'x-ClientKey':'string'
+                'x-Appcode': 'string',
+                'Origin':'string',
+                'Referer':'string'
               },
              
             }
@@ -147,8 +150,9 @@ get:
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
-              'x-ApiKey': 'string',
-              'x-ClientKey':'string'
+              'x-Appcode': 'string',
+              'Origin':'string',
+              'Referer':'string'
             },            
           }
         );
@@ -165,8 +169,10 @@ get:
         
         headers = {
           "Content-Type": "application/json",
-          "x-ApiKey": "string"
-          "x-ClientKey": "string"
+          "x-Appcode": "string"
+          "Origin": "string",
+          "Referer":"string"
+
         }
         
         response = requests.get(url, headers=headers)
@@ -196,8 +202,9 @@ get:
 
             HttpGet request = new HttpGet("https://sandbox.echohealthinc.com/echoexternalapi/api/v1/GetToken");
             request.setHeader("Content-Type", "application/json");
-            request.setHeader("x-ApiKey", "string");
-            request.setHeader("x-ClientKey", "string");
+            request.setHeader("x-AppCode", "string");
+            request.setHeader("Origin", "string");
+            request.setHeader("Referer", "string");
             
             String response = EntityUtils.toString(httpClient.execute(request).getEntity());
 
@@ -221,8 +228,9 @@ get:
            
             req, _ := http.NewRequest("GET", reqUrl)
             req.Header.Add("Content-Type", "application/json")
-            req.Header.Add("x-ApiKey", "string")
-            req.Header.Add("x-ClientKey", "string")
+            req.Header.Add("x-Appcode", "string")
+            req.Header.Add("Origin", "string")
+            req.Header.Add("Referer", "string")
             res, _ := http.DefaultClient.Do(req)
             defer res.Body.Close()
             body, _ := ioutil.ReadAll(res.Body)
@@ -243,8 +251,9 @@ get:
             curl_setopt_array($curl, [
               CURLOPT_HTTPHEADER => [
                 "Content-Type: application/json",
-                "x-ApiKey: string"
-                "x-ClientKey: string"
+                "x-AppCode: string"
+                "Origin: string"
+                "Referer: string"
               ],
               CURLOPT_POSTFIELDS => json_encode($payload),
               CURLOPT_URL => "https://sandbox.echohealthinc.com/echoexternalapi/api/v1/GetToken",
@@ -276,8 +285,9 @@ get:
           
           request = Net::HTTP::Get.new(url)
           request['Content-Type'] = 'application/json'
-          request['x-ApiKey'] = 'string'
-          request['x-ClientKey'] = 'string'
+          request['x-Appcode'] = 'string'
+          request['Origin'] = 'string'
+          request['Referer'] = 'string'
          
           
           response = http.request(request)

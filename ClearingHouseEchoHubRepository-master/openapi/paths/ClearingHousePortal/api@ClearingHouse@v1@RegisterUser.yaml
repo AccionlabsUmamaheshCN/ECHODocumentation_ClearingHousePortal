@@ -114,4 +114,299 @@ post:
                          }
           }
         }
-                                                                                                                                                                                
+  
+    - lang: 'curl'                
+      source: |                                                                                                                                                                                
+        curl -i -X POST \
+        'https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal' \
+        -H 'Content-Type: application/json' \
+        -H 'x-Authorization: ' \
+        -d '{
+          "APIFormIdentifierId": "string",
+          "UserName": "string",
+          "FirstName": "string",
+          "LastName": "string",
+          "Email": "string",
+          "Phone": 0,
+          "JobTitle": "string",
+          "ClearinghouseName": "string",
+          "OtherClearinghouseName": "string"
+        }'
+    - lang: 'Node.js'                
+      source: |  
+          import fetch from 'node-fetch';
+
+          async function run() {
+            const resp = await fetch(
+              `https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal`,
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'x-Authorization': ''
+                },
+                body: JSON.stringify({
+                  APIFormIdentifierId: 'string',
+                  UserName: 'string',
+                  FirstName: 'string',
+                  LastName: 'string',
+                  Email: 'string',
+                  Phone: 0,
+                  JobTitle: 'string',
+                  ClearinghouseName: 'string',
+                  OtherClearinghouseName: 'string'
+                })
+              }
+            );
+          
+            const data = await resp.json();
+            console.log(data);
+          }
+          
+          run();  
+    - lang: JavaScript                
+      source: |  
+          const resp = await fetch(
+            `https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal`,
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'x-Authorization': ''
+              },
+              body: JSON.stringify({
+                APIFormIdentifierId: 'string',
+                UserName: 'string',
+                FirstName: 'string',
+                LastName: 'string',
+                Email: 'string',
+                Phone: 0,
+                JobTitle: 'string',
+                ClearinghouseName: 'string',
+                OtherClearinghouseName: 'string'
+              })
+            }
+          );
+          
+          const data = await resp.json();
+          console.log(data);
+    - lang: Java
+      source: |
+          import java.net.*;
+          import java.net.http.*;
+          import java.util.*;
+          
+          public class App {
+            public static void main(String[] args) throws Exception {
+              var httpClient = HttpClient.newBuilder().build();
+          
+              var payload = String.join("\n"
+                , "{"
+                , " \"APIFormIdentifierId\": \"string\","
+                , " \"UserName\": \"string\","
+                , " \"FirstName\": \"string\","
+                , " \"LastName\": \"string\","
+                , " \"Email\": \"string\","
+                , " \"Phone\": 0,"
+                , " \"JobTitle\": \"string\","
+                , " \"ClearinghouseName\": \"string\","
+                , " \"OtherClearinghouseName\": \"string\""
+                , "}"
+              );
+          
+              var host = "https://sandbox.echohealthinc.com";
+              var pathname = "/echoexternalapi/api/ClearingHouse/v1/Portal";
+              var request = HttpRequest.newBuilder()
+                .POST(HttpRequest.BodyPublishers.ofString(payload))
+                .uri(URI.create(host + pathname ))
+                .header("Content-Type", "application/json")
+                .header("x-Authorization", "")
+                .build();
+          
+              var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+          
+              System.out.println(response.body());
+            }
+          }    
+    - lang: Python
+      source: |
+          import java.net.*;
+          import java.net.http.*;
+          import java.util.*;
+          
+          public class App {
+            public static void main(String[] args) throws Exception {
+              var httpClient = HttpClient.newBuilder().build();
+          
+              var payload = String.join("\n"
+                , "{"
+                , " \"APIFormIdentifierId\": \"string\","
+                , " \"UserName\": \"string\","
+                , " \"FirstName\": \"string\","
+                , " \"LastName\": \"string\","
+                , " \"Email\": \"string\","
+                , " \"Phone\": 0,"
+                , " \"JobTitle\": \"string\","
+                , " \"ClearinghouseName\": \"string\","
+                , " \"OtherClearinghouseName\": \"string\""
+                , "}"
+              );
+          
+              var host = "https://sandbox.echohealthinc.com";
+              var pathname = "/echoexternalapi/api/ClearingHouse/v1/Portal";
+              var request = HttpRequest.newBuilder()
+                .POST(HttpRequest.BodyPublishers.ofString(payload))
+                .uri(URI.create(host + pathname ))
+                .header("Content-Type", "application/json")
+                .header("x-Authorization", "")
+                .build();
+          
+              var response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+          
+              System.out.println(response.body());
+            }
+          }     
+    - lang: Java 8 with Apache                 
+      source: |
+          import org.apache.http.util.EntityUtils;
+          import org.apache.http.NameValuePair;
+          import org.apache.http.client.HttpClient;
+          import org.apache.http.client.entity.UrlEncodedFormEntity;
+          import org.apache.http.client.methods.HttpPost;
+          import org.apache.http.impl.client.HttpClientBuilder;
+          import org.apache.http.message.BasicNameValuePair;
+          import org.apache.http.entity.StringEntity;
+          import org.json.JSONObject;
+          import org.json.JSONArray;
+          import java.util.ArrayList;
+          import java.util.List;
+          import org.apache.http.entity.mime.MultipartEntity;
+          import org.apache.http.entity.mime.content.StringBody;
+          
+          public class App {
+            public static void main(String[] args ) throws java.io.IOException {
+              HttpClient httpClient = HttpClientBuilder.create().build();
+          
+              HttpPost request = new HttpPost("https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal);
+              request.setHeader("Content-Type", "application/json");
+              request.setHeader("x-Authorization", "");
+              JSONObject payload = new JSONObject();
+              payload.put("APIFormIdentifierId", "string");
+              payload.put("UserName", "string");
+              payload.put("FirstName", "string");
+              payload.put("LastName", "string");
+              payload.put("Email", "string");
+              payload.put("Phone", 0);
+              payload.put("JobTitle", "string");
+              payload.put("ClearinghouseName", "string");
+              payload.put("OtherClearinghouseName", "string");
+              request.setEntity(new StringEntity(payload.toString()));
+              String response = EntityUtils.toString(httpClient.execute(request).getEntity());
+          
+              System.out.println(response);
+            }
+          }
+    - lang: GO
+      source: |
+          package main
+
+          import (
+            "fmt"
+            "bytes"
+            "net/http"
+            "io/ioutil"
+          )
+          
+          func main() {
+            reqUrl := "https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal"
+            var data = []byte(`{
+              "APIFormIdentifierId": "string",
+              "UserName": "string",
+              "FirstName": "string",
+              "LastName": "string",
+              "Email": "string",
+              "Phone": 0,
+              "JobTitle": "string",
+              "ClearinghouseName": "string",
+              "OtherClearinghouseName": "string"
+            }`)
+            req, _ := http.NewRequest("POST", reqUrl, bytes.NewBuffer(data))
+            req.Header.Add("Content-Type", "application/json")
+            req.Header.Add("x-Authorization", "")
+            res, _ := http.DefaultClient.Do(req)
+            defer res.Body.Close()
+            body, _ := ioutil.ReadAll(res.Body)
+          
+            fmt.Println(res)
+            fmt.Println(string(body))
+          }    
+    - lang: PHP
+      source: |
+          /**
+          * Requires libcurl
+          */
+        
+          $curl = curl_init();
+          
+          $payload = array(
+            "APIFormIdentifierId" => "string",
+            "UserName" => "string",
+            "FirstName" => "string",
+            "LastName" => "string",
+            "Email" => "string",
+            "Phone" => 0,
+            "JobTitle" => "string",
+            "ClearinghouseName" => "string",
+            "OtherClearinghouseName" => "string"
+          );
+          
+          curl_setopt_array($curl, [
+            CURLOPT_HTTPHEADER => [
+              "Content-Type: application/json",
+              "x-Authorization: "
+            ],
+            CURLOPT_POSTFIELDS => json_encode($payload),
+            CURLOPT_URL => "https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => "POST",
+          ]);
+          
+          $response = curl_exec($curl);
+          $error = curl_error($curl);
+          
+          curl_close($curl);
+          
+          if ($error) {
+            echo "cURL Error #:" . $error;
+          } else {
+            echo $response;
+          }     
+    - lang: Ruby
+      source: |
+          require 'json'
+          require 'uri'
+          require 'net/http'
+          require 'openssl'
+          
+          url = URI('https://sandbox.echohealthinc.com/echoexternalapi/api/ClearingHouse/v1/Portal')
+          
+          http = Net::HTTP.new(url.host, url.port)
+          http.use_ssl = true
+          
+          request = Net::HTTP::Post.new(url)
+          request['Content-Type'] = 'application/json'
+          request['x-Authorization'] = ''
+          request.body = {
+            APIFormIdentifierId: 'string',
+            UserName: 'string',
+            FirstName: 'string',
+            LastName: 'string',
+            Email: 'string',
+            Phone: 0,
+            JobTitle: 'string',
+            ClearinghouseName: 'string',
+            OtherClearinghouseName: 'string'
+          }.to_json
+          
+          response = http.request(request)
+          puts response.read_body       
