@@ -43,6 +43,8 @@ paths:
   #Authorization
   /api/v1/GetToken:
     $ref: paths/Authentication/api@RequestAuthentication@V1.yaml
+  /api/v1/GetTokenByAppCode:
+    $ref: paths/Authentication/api@TokenAppcodeRequestAuthentication@V1.yaml   
     #ClearingHousePotal 
   /api/ClearingHouse/v1/Portal [Register User]:
     $ref: paths/ClearingHousePortal/api@ClearingHouse@v1@RegisterUser.yaml
@@ -97,7 +99,23 @@ components:
       type: apiKey
       name: x-Authorization
       in: header
-      description: Requests should pass an api_key header.  
+      description: Requests should pass an authentication key header.
+    x-Appcode:
+      type: apiKey
+      name: AppCode
+      in: header
+      description: Requests should pass an appcode in  header.  
+    Origin:
+      type: apiKey
+      name: OriginValue
+      in: header
+      description: Requests should pass an appcode in  header.
+    Referer:
+      type: apiKey
+      name: RefererValue
+      in: header
+      description: Requests should pass an referer in  header.  
+
     
 tags: 
    #Authorization
