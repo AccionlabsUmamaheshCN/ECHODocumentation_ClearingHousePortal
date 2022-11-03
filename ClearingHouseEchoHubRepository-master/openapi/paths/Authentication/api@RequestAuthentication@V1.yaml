@@ -6,18 +6,31 @@ get:
   security:
     - x-ApiKey: []
     - x-ClientKey: []
+  parameters:        
+  - name: x-ApiKey
+    in: header
+    required: true
+    schema:
+      type: string
+      $ref: ../../components/headers/xApiKey.yaml
+  - name: x-ClientKey
+    in: header
+    required: true
+    schema:
+      type: string
+      $ref: ../../components/headers/xClientKey.yaml       
   description: >
       Once the user is authenticated, this endpoint generates an authorization
       token by using the API key and the Client key. This authorization token is
       valid for 30 minutes.
-  requestBody:
-    description:  |
-      This endpoint is used to generate the Authorization Token.
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ../../components/schemas/Authentication/Request/AuthenticationRequest.yaml
+  # requestBody:
+  #   description:  |
+  #     This endpoint is used to generate the Authorization Token.
+  #   required: true
+  #   content:
+  #     application/json:
+  #       schema:
+  #         $ref: ../../components/schemas/Authentication/Request/AuthenticationRequest.yaml
   responses:
     '200':
       description: Success
