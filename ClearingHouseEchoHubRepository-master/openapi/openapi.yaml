@@ -5,8 +5,8 @@ info:
   description: >-
     API Endpoints for the Clearing House Project Team clients.
 
-        SandBox url: https://sandbox.echohealthinc.com/echoexternalapi
-        Production Url : https://api.echohealthinc.com/echoexternalapi
+        SandBox url: https://sandbox.echohealthinc.com
+        Production Url : https://api.echohealthinc.com
 
     # Authentication
 
@@ -20,10 +20,8 @@ info:
     name: ECHO Health Inc.
     email: Echo.Hub@echohealthinc.com 
 servers:
-      - url: https://sandbox.echohealthinc.com/echoexternalapi
-      - url: https://api.echohealthinc.com/echoexternalapi
-security: 
-  -  {}      
+      - url: https://sandbox.echohealthinc.com
+      - url: https://api.echohealthinc.com
 
     
 
