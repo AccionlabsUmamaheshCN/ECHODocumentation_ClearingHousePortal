@@ -1,0 +1,83 @@
+get:
+  tags:
+    - Authorization 
+  summary: Validate API Token
+  x-internal: true
+  operationId: ValidateToken
+  parameters:        
+    - name: x-Authorization
+      in: header
+      required: true
+      schema:
+        type: string
+        $ref: ../../components/headers/xAuthorization.yaml
+    
+
+  description: >
+    Once the user token is generated, this endpoint is used to validate the token which is 
+    valid for 30 minutes.
+  # requestBody:
+  #   description:  |
+  #     This endpoint is used to generate the Authorization Token.
+    # required: true
+    # content:
+    #   application/json:
+    #     schema:
+    #       $ref: ../../components/schemas/Authentication/Request/ValidateUserTokenRequest.yaml
+  responses:
+    '200':
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/Authentication/Response/ValidateUserTokenResponse.yaml
+          examples:
+            mapName_001:   
+              description: Please scroll the above dropdown list for more response codes          
+              summary: "001"
+              value:
+                ReponseCode: Response for Payment response code 001
+                ReponseCodeDesc: Transaction Approved                
+                TransLog:  
+                   - AuthToken: Authorization token
+
+
+            mapName_901:   
+              description: Please scroll the above dropdown list for more response codes          
+              summary: "901"
+              value:
+                ReponseCode: Response for Error  Code 901
+                ReponseCodeDesc:  Invalid Consumer Id.
+                TransError:  
+                   - ErrorCode: "901"
+                     ErrorCodeDesc: Invalid Customer Id
+                     creationdate: Current Date & Time
+            mapName_902:   
+                description: Please scroll the above dropdown list for more response codes          
+                summary: "902"
+                value:
+                  ReponseCode: Response for Error Code 902
+                  ReponseCodeDesc: Transaction  Failure              
+                  TransError:  
+                     - ErrorCode: "902"
+                       ErrorCodeDesc: Invalid Endpoint
+                       creationdate: Current Date & Time
+  # x-code-samples: 
+  # - lang: 'C#'                
+  #   source: |
+  #       using System;   
+  #       using RestSharp;
+
+  #       public class Program
+  #       {
+  #         public static  void Main()
+  #         {
+  #           var client = new RestClient("https://qa-api.echohealthinc.com/echoexternalapi/api/v1/validatetoken");
+  #           client.Timeout = -1;
+  #           var request = new RestRequest(Method.GET);
+  #           request.AddHeader("x-Authorization", "string");
+  #           request.AddHeader("x-AccessId", "26");
+  #           IRestResponse response = client.Execute(request);
+  #           Console.WriteLine(response.Content);
+  #         }
+  #       }    
