@@ -105,16 +105,7 @@ components:
       name: AppCode
       in: header
       description: Requests should pass an appcode in  header.  
-    Origin:
-      type: apiKey
-      name: OriginValue
-      in: header
-      description: Requests should pass an appcode in  header.
-    Referer:
-      type: apiKey
-      name: RefererValue
-      in: header
-      description: Requests should pass an referer in  header.  
+    
 
     
 tags: 
