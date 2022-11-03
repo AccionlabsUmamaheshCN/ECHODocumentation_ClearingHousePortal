@@ -5,20 +5,26 @@ get:
   operationId: GetAuthTokenByAppCode
   security:
     - x-Appcode: []
-    
+  parameters:        
+  - name: x-AppCode
+    in: header
+    required: true
+    schema:
+      type: string
+      $ref: ../../components/headers/xAppCode.yaml  
 
   description: >
       Once the user is authenticated, this endpoint generates an authorization
       token by using the App Code. This authorization token is
       valid for 30 minutes.
-  requestBody:
-    description:  |
-      This endpoint is used to generate the Authorization Token.
-    required: true
-    content:
-      application/json:
-        schema:
-          $ref: ../../components/schemas/Authentication/Request/AppCodeAuthenticationRequest.yaml
+  # requestBody:
+  #   description:  |
+  #     This endpoint is used to generate the Authorization Token.
+  #   required: true
+  #   content:
+  #     application/json:
+  #       schema:
+  #         $ref: ../../components/schemas/Authentication/Request/AppCodeAuthenticationRequest.yaml
   responses:
     '200':
       description: Success

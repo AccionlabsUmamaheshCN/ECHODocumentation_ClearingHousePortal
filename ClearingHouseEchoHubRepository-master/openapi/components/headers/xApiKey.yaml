@@ -1,0 +1,6 @@
+x-ApiKey:
+  schema:
+    type: string 
+  name: x-ApiKey
+  in: header
+  required: true
