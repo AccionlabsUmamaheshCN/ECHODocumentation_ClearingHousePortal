@@ -1,12 +1,2 @@
-required:
-  - x-Appcode
-  
-type: object
-properties:
-  x-Appcode:
-    type: string
-    description: 
-      This is the App Code       
-    maxLength: 150
-    minLength: 1
+
   
