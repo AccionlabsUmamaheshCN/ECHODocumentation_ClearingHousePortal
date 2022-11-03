@@ -42,7 +42,9 @@ paths:
   /api/v1/GetToken:
     $ref: paths/Authentication/api@RequestAuthentication@V1.yaml
   /api/v1/GetTokenByAppCode:
-    $ref: paths/Authentication/api@TokenAppcodeRequestAuthentication@V1.yaml   
+    $ref: paths/Authentication/api@TokenAppcodeRequestAuthentication@V1.yaml  
+  /api/v1/validateToken:
+    $ref: paths/Authentication/api@ValidateToken@V1.yaml   
     #ClearingHousePotal 
   /api/ClearingHouse/v1/Portal [Register User]:
     $ref: paths/ClearingHousePortal/api@ClearingHouse@v1@RegisterUser.yaml
