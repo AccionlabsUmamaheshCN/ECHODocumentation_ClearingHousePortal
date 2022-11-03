@@ -1,0 +1,6 @@
+x-Appcode:
+  schema:
+    type: string 
+  name: x-Appcode
+  in: header
+  required: true

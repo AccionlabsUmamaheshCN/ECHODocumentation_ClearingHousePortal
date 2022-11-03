@@ -1,0 +1,6 @@
+x-ClientKey:
+  schema:
+    type: string 
+  name: x-ClientKey
+  in: header
+  required: true
