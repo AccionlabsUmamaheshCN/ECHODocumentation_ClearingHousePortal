@@ -3,8 +3,8 @@ get:
     - Authorization 
   summary: Get Authorization Token By App Code
   operationId: GetAuthTokenByAppCode
-  security:
-    - x-Appcode: []
+  # security:
+  #   - x-Appcode: []
   parameters:        
   - name: x-AppCode
     in: header
